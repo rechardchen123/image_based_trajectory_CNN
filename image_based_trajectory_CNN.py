@@ -10,8 +10,8 @@ import pandas as pd
 import glob
 import math
 
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', None)
+#pd.set_option('display.max_columns', None)
+#pd.set_option('display.max_rows', None)
 
 
 def compute_time_difference(time_to_seconds_list):
@@ -132,7 +132,7 @@ def save_data_into_file(MMSI_list,
     # output the file
     name_mmsi = int(data.iloc[0]['MMSI'])
     name_day = int(data.iloc[0]['Day'])
-    data.to_csv(str(name_mmsi)+'-'+str(name_day)+'.csv',index=False)
+    data.to_csv('/home/ucesxc0/Scratch/output/ais_trajectory_compensation/result/%d-%d.csv'%(name_mmsi,name_day),index=False)
 
 
 # load the data and calculate parameters(compensate_points, list)
@@ -142,7 +142,7 @@ Longitude list, speed list, time list etc.).
 Secondly, the loop for reading the file and calculate some parameters like
 compensate_points for calculating.'''
 
-file_address = glob.glob(r'C:\Users\LPT-ucesxc0\AIS-Data\test_data\*.csv')
+file_address = glob.glob('/home/ucesxc0/Scratch/output/ais_trajectory_compensation/AIS-data-after-day-split/*.csv')
 threshold_time = 120  # the threshold time called 120 seconds (2 minutes)
 for file in file_address:
     file_load = pd.read_csv(file)
