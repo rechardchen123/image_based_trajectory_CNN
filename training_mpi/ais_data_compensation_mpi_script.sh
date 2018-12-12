@@ -10,7 +10,7 @@
 #$ -l h_rt=8:00:0
 
 #3. Request 8 gigabyte of RAM per procee (must be an integer)
-#$ -l mem=8G
+#$ -l mem=4G
 
 #4. Request 15 gigabyte of TMPDIR space per node (default is 10GB)
 #$ -l tmpfs=15G
@@ -19,7 +19,7 @@
 #$ -N AIS_trajectory_compensation_mpi_script
 
 #6. Select the MPI parallel environment and 16 processes.
-#$ -pe mpi 16
+#$ -pe mpi 8
 
 # 7. Set the working directory to somewhere in your scratch space.  This is
 # a necessary step with the upgraded software stack as compute nodes cannot
