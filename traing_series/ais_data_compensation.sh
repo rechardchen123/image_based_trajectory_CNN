@@ -5,7 +5,7 @@
 # 1. Force bash as the executing shell.
 #$ -S /bin/bash
 # 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
-#$ -l h_rt=20:0:0
+#$ -l h_rt=4:0:0
 
 # 3. Request 16 gigabyte of RAM (must be an integer)
 #$ -l mem=16G
