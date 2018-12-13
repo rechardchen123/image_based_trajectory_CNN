@@ -15,7 +15,7 @@ def compute_time_difference(time_to_seconds_list):
     Output: new list for store delta time.'''
     save_time_difference = []
     for i in range(0, len(time_to_seconds_list) - 1):
-        save_time_difference.append(time_to_seconds_list[i + 1] - time_to_seconds_list[i])
+        save_time_difference.append(abs(time_to_seconds_list[i + 1] - time_to_seconds_list[i]))
     save_time_difference.insert(0, 0)
     return save_time_difference
 
