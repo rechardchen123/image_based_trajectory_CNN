@@ -4,6 +4,7 @@
 # @Author  :xiang chen
 import os
 import pandas as pd
+import numpy as np
 import glob
 import math
 
@@ -48,22 +49,26 @@ def data_compensation_algorithm_static(MMSI_list,
                                        Longitude_list,
                                        Latitude_list,
                                        Day_list,
+                                       delta_time,
                                        number_of_compensation,
                                        current_position):
     """The function is about to add new static points into the trajectory sequences.
     All the list should be added.
     Input parameters: the original list
     Output: the new list contained the added points."""
+    incremental_time = 30 # for static traget, the time should be reported to station between 30s.
     for j in range(current_position, current_position + number_of_compensation):
         MMSI_list.insert(j, MMSI_list[0])  # insert the MMSI number
         Day_list.insert(j, Day_list[0])
+        delta_time.insert(j,delta_time[current_position]+incremental_time)
         Longitude_list.insert(j, Longitude_list[current_position])
         Latitude_list.insert(j, Latitude_list[current_position])
-    return MMSI_list, Longitude_list, Latitude_list, Day_list
+    return MMSI_list, Longitude_list, Latitude_list, Day_list,delta_time
 
 
 def data_compensation_algorithm_movement(MMSI_list, Longitude_list, Latitude_list,
-                                         Day_list, number_of_compensation, current_position):
+                                         Day_list, delta_time,delta_speed,
+                                         number_of_compensation, current_position):
     """This function is to add some missing data.
     The processing looks like this:
     1.Whether delta time > threshold and delta < one hour,
@@ -78,10 +83,21 @@ def data_compensation_algorithm_movement(MMSI_list, Longitude_list, Latitude_lis
     # calculate the delta difference of the latitude
     increment_variable_longitude = 0.05
     increment_variable_latitude = 0.04
+    increment_variable_time = 20
     for i in range(current_position, current_position + number_of_compensation):
         MMSI_list.insert(i, MMSI_list[0])
         Day_list.insert(i, Day_list[0])
+        delta_time.insert(i, delta_time[i] + increment_variable_time)
+        # Speed_list.insert(0,Speed_list[0])
         delta_difference_latitude = abs(Latitude_list[i + 1] - Latitude_list[i])
+        # delta_difference_longitude = abs(Longitude_list[i+1]-Longitude_list[i])
+        # delta_distance = math.sqrt(np.square(delta_difference_latitude)+ np.square(delta_difference_longitude))
+        # if delta_speed[i] ==0:
+        #     increment_variable_time = 20
+        #     delta_time.insert(i, delta_time[i] + increment_variable_time)
+        # else:
+        #     increment_variable_time = float(delta_distance/delta_speed[i])
+        #     delta_time.insert(i, delta_time[i] + increment_variable_time)
         if delta_difference_latitude > 0.05:
             # interpolation algorithm
             lat0 = Latitude_list[i]
@@ -96,16 +112,17 @@ def data_compensation_algorithm_movement(MMSI_list, Longitude_list, Latitude_lis
         else:
             Longitude_list.insert(i, Longitude_list[current_position] + increment_variable_longitude)
             Latitude_list.insert(i, Latitude_list[current_position] + increment_variable_latitude)
-    return MMSI_list, Longitude_list, Latitude_list, Day_list
+    return MMSI_list, Longitude_list, Latitude_list, Day_list,delta_time
 
 
-def save_data_into_file(MMSI_list, Longitude_list, Latitude_list, Day_list):
+def save_data_into_file(MMSI_list, Longitude_list, Latitude_list, Day_list, delta_time):
     """This function is for storing the data and outputing the data into a file."""
     # dictionary for storing the list and transfer it to DataFrame
     save_dict = {'MMSI': MMSI_list,
                  'Longitude': Longitude_list,
                  'Latitude': Latitude_list,
-                 'Day': Day_list}
+                 'Day': Day_list,
+                 'delta_time':delta_time}
     data = pd.DataFrame(save_dict)
     # output the file
     name_mmsi = int(data.iloc[0]['MMSI'])
@@ -146,32 +163,37 @@ for file in file_address:
                         number_of_compensation = round((time_to_seconds_list[j] -
                                                         time_to_seconds_list[j - 1]) / threshold_time)
                         current_position = j
-                        new_MMSI_list, new_Longitude_list, new_Latitude_list, new_Day_list = \
+                        new_MMSI_list, new_Longitude_list, new_Latitude_list, new_Day_list,delta_time= \
                             data_compensation_algorithm_static(MMSI_list,
                                                                Longitude_list,
                                                                Latitude_list,
                                                                Day_list,
+                                                               delta_time,
                                                                number_of_compensation,
                                                                current_position)
                         save_data_into_file(new_MMSI_list,
                                             new_Longitude_list,
                                             new_Latitude_list,
-                                            new_Day_list)
+                                            new_Day_list,
+                                            delta_time)
                     else:
                         number_of_compensation = round((time_to_seconds_list[j] -
                                                         time_to_seconds_list[j - 1]) / threshold_time)
                         current_position = j
-                        new_MMSI_list, new_Longitude_list, new_Latitude_list, new_Day_list = \
+                        new_MMSI_list, new_Longitude_list, new_Latitude_list, new_Day_list,delta_time = \
                             data_compensation_algorithm_movement(MMSI_list,
                                                                  Longitude_list,
                                                                  Latitude_list,
                                                                  Day_list,
+                                                                 delta_time,
+                                                                 delta_speed,
                                                                  number_of_compensation,
                                                                  current_position)
                         save_data_into_file(new_MMSI_list,
                                             new_Longitude_list,
                                             new_Latitude_list,
-                                            new_Day_list)
+                                            new_Day_list,
+                                            delta_time)
             else:
                 continue
     else:
