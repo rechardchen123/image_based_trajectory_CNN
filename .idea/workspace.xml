@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c2201c-6f6d-48ca-98aa-d95d3cf3bd82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_plot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delta-time-delta-speed/delta_time_delta_speed.py" beforeDir="false" afterPath="$PROJECT_DIR$/delta-time-delta-speed/delta_time_delta_speed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trajectory_image_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/trajectory_image_generation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/413185000-1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,37 +18,17 @@
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$trajectory_image_generation.coverage" NAME="trajectory_image_generation Coverage Results" MODIFIED="1544724328536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$interplot_method_test.coverage" NAME="interplot_method_test Coverage Results" MODIFIED="1543958771783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$image_process_test.coverage" NAME="image_process_test Coverage Results" MODIFIED="1544554803713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$trajectory_image_generation_local.coverage" NAME="trajectory_image_generation_local Coverage Results" MODIFIED="1544891948799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$test_file_size.coverage" NAME="test_file_size Coverage Results" MODIFIED="1544624657814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$image_based_trajectory_CNN_local.coverage" NAME="image_based_trajectory_CNN_local Coverage Results" MODIFIED="1544698133463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$trajectory_image_generation__1_.coverage" NAME="trajectory_image_generation (1) Coverage Results" MODIFIED="1544890624858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trajectory_generation" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$test_plot.coverage" NAME="test_plot Coverage Results" MODIFIED="1544727932213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$image_based_trakectory_CNN_test.coverage" NAME="image_based_trakectory_CNN_test Coverage Results" MODIFIED="1544544487849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$transfet_image_to_grayscale.coverage" NAME="transfet_image_to_grayscale Coverage Results" MODIFIED="1544555098337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$delta_time_delta_speed.coverage" NAME="delta_time_delta_speed Coverage Results" MODIFIED="1544695365075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/image_based_trajectory_CNN_local.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding>
-                <element signature="e#111#125#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trajectory_image_generation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,13 +43,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/image_process_test.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/image_based_trajectory_CNN_local.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.sh" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/test_interplot_alogorithm.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/traing_series/image_based_trajectory_CNN.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/transfet_image_to_grayscale.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/trajectory_image_generation_local.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/delta-time-delta-speed/delta_time_delta_speed.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/test_file_size.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/test_plot.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/trajectory_image_generation.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -87,20 +69,24 @@
         <option value="$PROJECT_DIR$/traing_series/image_based_trajectory_CNN.py" />
         <option value="$PROJECT_DIR$/test_plot.py" />
         <option value="$PROJECT_DIR$/trajectory_image_generation.py" />
+        <option value="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.sh" />
+        <option value="$PROJECT_DIR$/trajectory_image_generation_local.py" />
+        <option value="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2166" />
-    <option name="y" value="616" />
-    <option name="width" value="638" />
-    <option name="height" value="348" />
+    <option name="x" value="2165" />
+    <option name="y" value="615" />
+    <option name="width" value="640" />
+    <option name="height" value="350" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,11 +99,15 @@
               <item name="image_based_trajectory_CNN" type="462c0819:PsiDirectoryNode" />
               <item name="delta-time-delta-speed" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="image_based_trajectory_CNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="image_based_trajectory_CNN" type="462c0819:PsiDirectoryNode" />
+              <item name="trajectory_generation" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,29 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_plot">
-    <configuration name="delta_time_delta_speed" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="image_based_trajectory_CNN" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/delta_time_delta_speed.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.trajectory_image_generation_local">
     <configuration name="image_based_trajectory_CNN_local" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="image_based_trajectory_CNN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,28 +144,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_based_trajectory_CNN_local.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_file_size" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="image_based_trajectory_CNN" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_file_size.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -228,6 +174,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="trajectory_image_generation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="image_based_trajectory_CNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trajectory_generation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="trajectory_image_generation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="image_based_trajectory_CNN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -250,13 +218,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="trajectory_image_generation_local" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="image_based_trajectory_CNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trajectory_image_generation_local.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.trajectory_image_generation_local" />
+        <item itemvalue="Python.trajectory_image_generation (1)" />
         <item itemvalue="Python.test_plot" />
         <item itemvalue="Python.trajectory_image_generation" />
         <item itemvalue="Python.image_based_trajectory_CNN_local" />
-        <item itemvalue="Python.delta_time_delta_speed" />
-        <item itemvalue="Python.test_file_size" />
       </list>
     </recent_temporary>
   </component>
@@ -282,11 +272,14 @@
       <workItem from="1544630076980" duration="2328000" />
       <workItem from="1544636832814" duration="2369000" />
       <workItem from="1544693852692" duration="21333000" />
+      <workItem from="1544796351226" duration="4547000" />
+      <workItem from="1544878803261" duration="8314000" />
+      <workItem from="1544890779378" duration="1228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89628000" />
+    <option name="totallyTimeSpent" value="103717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="878" height="1510" extended-state="6" />
@@ -296,7 +289,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33309144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54499274" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39985487" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -311,7 +304,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info active="true" anchor="right" id="SciView" order="4" visible="true" weight="0.036674816" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.5" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
   </component>
@@ -397,16 +390,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delta_time_delta_speed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-          <folding>
-            <element signature="e#112#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/delta_time_delta_speed.py" />
     <entry file="file://$PROJECT_DIR$/delta-time-delta-speed/delta_time_delta_speed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -434,19 +418,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trajectory_image_generation.py">
+    <entry file="file://$PROJECT_DIR$/trajectory_image_generation.py" />
+    <entry file="file://$PROJECT_DIR$/trajectory_generation/412018140.0-10.0.jpg" />
+    <entry file="file://$PROJECT_DIR$/trajectory_generation/413302410.0-7.0.jpg" />
+    <entry file="file://$PROJECT_DIR$/image_based_trajectory_CNN_local.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="-65">
+          <caret line="169" column="45" selection-start-line="169" selection-start-column="45" selection-end-line="169" selection-end-column="45" />
+          <folding>
+            <element signature="e#111#125#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_based_trajectory_CNN_local.py">
+    <entry file="file://$PROJECT_DIR$/trajectory_image_generation_local.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="1305">
+          <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
           <folding>
-            <element signature="e#111#125#0" expanded="true" />
+            <element signature="e#472#486#0" expanded="true" />
           </folding>
         </state>
       </provider>

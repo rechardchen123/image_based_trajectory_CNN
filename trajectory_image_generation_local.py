@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_coding:utf-8 _*_
 # @Time    :Created on Dec 04 4:39 PM 2018
 # @Author  :xiang chen
@@ -13,8 +13,8 @@ And then, output the images and generate the arraies for classifying."""
 import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
-#matplotlib.use('Agg') #In local debugging, it should comment it and uploading to remote server,
-                      # should use this.
+# matplotlib.use('Agg') #In local debugging, it should comment it and uploading to remote server,
+# should use this.
 import pandas as pd
 import glob
 import math
@@ -46,7 +46,7 @@ def statistic_the_data_list(plot_trajectory_dataframe):
     return get_value
 
 # read the files.
-trajectory_file_address = glob.glob('/home/ucesxc0/Scratch/output/image_trajectory_generation/AIS_trajectory_inclued_delta_time_delta_speed/*.csv')
+trajectory_file_address = glob.glob(r"C:\Users\LPT-ucesxc0\AIS-Data\test_data\*.csv")
 fig = plt.figure()
 plt.rcParams['axes.facecolor'] = 'black' #define the backgroud
 for file in trajectory_file_address:
@@ -60,7 +60,7 @@ for file in trajectory_file_address:
     longitude_array = np.array(Longitude_list)
     delta_time_list = list(file_load['delta_time'])
     delta_time_array = np.array(delta_time_list)
-   # the data for plot
+    # the data for plot
     trajectory_lat_long_delta_time_dict = {'latitude':latitude_array,
                                            'longitude':longitude_array,
                                            'delta_time':delta_time_array}
@@ -72,6 +72,7 @@ for file in trajectory_file_address:
     threshold_time_maneuvring_operation = get_value[5]
     threshold_time_anchorage = 300
     maximum_time = get_value[3]
+
     # loop the dict
     for i in range(0,len(plot_trajectory_dataframe)-1):
         if plot_trajectory_dataframe.iloc[i]['delta_time'] == minimial_time and \
@@ -88,7 +89,8 @@ for file in trajectory_file_address:
             plt.plot(plot_trajectory_dataframe.iloc[i]['latitude'],
                         plot_trajectory_dataframe.iloc[i]['longitude'],
                         color='#ffffff',marker='.')
-    plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d.jpg'%(name_mmsi,name_day))
+    plt.savefig(str(name_mmsi)+'-'+str(name_day)+'.jpg')
+    plt.show()
     plt.close('all')
 
 
