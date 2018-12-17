@@ -23,7 +23,7 @@ with tf.Session() as sess:
     img_data = tf.image.convert_image_dtype(img_data,dtype=tf.float32)
     print(img_data.eval())
 
-    resized = tf.image.resize_images(img_data, [300, 300], method=0)
+    resized = tf.image.resize_images(img_data, [460, 680], method=0)
     print(resized.eval())
     resized = tf.image.convert_image_dtype(resized, dtype=tf.uint8)
     encoded_image = tf.image.encode_jpeg(resized)
