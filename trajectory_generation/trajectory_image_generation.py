@@ -61,7 +61,7 @@ for file in trajectory_file_address:
     plot_trajectory_dataframe = pd.DataFrame(trajectory_lat_long_delta_time_dict)
     get_value = statistic_the_data_list(plot_trajectory_dataframe)
     # get the threshold time for the normal navigation:
-    threshold_time_normal_navigation = 500
+    threshold_time_normal_navigation = 600
     maximum_time = get_value[0]
     speed_max = get_value[1]
     speed_threshold = 1.8
@@ -70,26 +70,32 @@ for file in trajectory_file_address:
         if plot_trajectory_dataframe.iloc[i]['speed'] <= speed_threshold:
             plt.plot(plot_trajectory_dataframe.iloc[i]['latitude'],
                      plot_trajectory_dataframe.iloc[i]['longitude'],
-                     color='#ffffff', marker='.')  # anchorage or static state
+                     color='#ffffff', marker='.')  # anchorage or static state label-0
         else:
             if plot_trajectory_dataframe.iloc[i]['delta_time'] > threshold_time_normal_navigation:
                 plt.plot(plot_trajectory_dataframe.iloc[i]['latitude'],
                          plot_trajectory_dataframe.iloc[i]['longitude'],
-                         color='#c0c0c0', marker='.')  # maneuvring operation
+                         color='#c0c0c0', marker='.')  # maneuvring operation label-1
             else:
                 plt.plot(plot_trajectory_dataframe.iloc[i]['latitude'],
                          plot_trajectory_dataframe.iloc[i]['longitude'],
-                         color='#666666', marker='.')  # normal navigation
+                         color='#666666', marker='.')  # normal navigation label-2
     if speed_max < 2.0:
         name_label_static = 0
         plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%d.jpg' % (
             name_mmsi, name_day,name_label_static))
         plt.close('all')
-    elif maximum_time > threshold_time_normal_navigation:
-        name_label_normal_navigation = '0-1-2'
+    elif maximum_time < threshold_time_normal_navigation:
+        name_label_normal_navigation = '0-1'
         plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%s.jpg' % (
         name_mmsi, name_day, name_label_normal_navigation))
         plt.close('all')
+    else:
+        name_label_maneuvring = '0-1-2'
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%s.jpg' % (
+            name_mmsi, name_day, name_label_maneuvring))
+        plt.close('all')
+
 
 
 

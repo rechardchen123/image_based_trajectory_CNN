@@ -83,12 +83,20 @@ for file in trajectory_file_address:
                          color='#666666', marker='.')  # normal navigation
     if speed_max < 2.0:
         name_label_static = 0
-        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d.jpg'% (name_mmsi, name_day))
+        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%d.jpg'% (name_mmsi, name_day,name_label_static))
+        plt.show()
+        plt.close('all')
+    elif speed_max > 2.5 and maximum_time < threshold_time_normal_navigation:
+        name_label_normal_navigation = '0-1'
+        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg' % (
+        name_mmsi, name_day, name_label_normal_navigation))
         plt.show()
         plt.close('all')
     elif maximum_time > threshold_time_normal_navigation:
-        name_label_normal_navigation = '0-1-2'
-        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg'%(name_mmsi,name_day,name_label_normal_navigation))
+        name_label_maneuvring = '0-1-2'
+        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg' % (
+            name_mmsi, name_day, name_label_maneuvring))
         plt.show()
         plt.close('all')
+
 
