@@ -31,24 +31,39 @@ def compute_speed_difference(Speed_list):
     save_speed_difference1 = [round(j, 2) for j in save_speed_difference]
     return save_speed_difference1
 
+def compute_heading_difference(Heading_list):
+    '''Calculate the delta speed.
+        Input: Heading_list
+        Output: new list for store delta heading.'''
+    save_heading_difference = []
+    for i in range(0,len(Heading_list)-1):
+        difference = math.fabs(Heading_list[i+1]-Heading_list[i])
+        save_heading_difference.append(difference)
+    save_heading_difference.insert(0,0)
+    return save_heading_difference
+
 def save_data_into_file(MMSI_list,
                         Longitude_list,
                         Latitude_list,
                         Speed_list,
+                        Heading_list,
                         Day_list,
                         time_to_seconds_list,
                         delta_time,
-                        delta_speed):
+                        delta_speed,
+                        delta_heading):
     '''This function is for storing the data and outputing the data into a file.'''
     # dictionary for storing the list and transfer it to dataframe
     save_dict = {'MMSI':MMSI_list,
                  'Longitude':Longitude_list,
                  'Latitude':Latitude_list,
                  'Speed':Speed_list,
+                 'Heading':Heading_list,
                  'Day':Day_list,
                  'time_to_seconds':time_to_seconds_list,
                  'delta_time':delta_time,
-                 'delta_speed':delta_speed}
+                 'delta_speed':delta_speed,
+                 'delta_heading':delta_heading}
     data = pd.DataFrame(save_dict)
     # output the file
     name_mmsi = int(data.iloc[0]['MMSI'])
@@ -57,18 +72,21 @@ def save_data_into_file(MMSI_list,
                 index=False)
 
 
-file_address = glob.glob('/home/ucesxc0/Scratch/output/ais_trajectory_delta_time_delta_speed/AIS-data-after-day-split/*.csv')
+file_address = glob.glob('/home/ucesxc0/Scratch/output/ais_trajectory_delta_time_delta_speed/AIS_trajectory_after_day_split/*.csv')
 for file in file_address:
     file_load = pd.read_csv(file)
     MMSI_list = list(file_load['MMSI'])
     Longitude_list = list(file_load['Longitude'])
     Latitude_list = list(file_load['Latitude'])
     Speed_list = list(file_load['Speed'])
+    Heading_list = list(file_load['Heading'])
     Day_list = list(file_load['Day'])
     time_to_seconds_list = list(file_load['time_to_seconds'])
     # calculate the delta time and delta speed
     delta_time = compute_time_difference(time_to_seconds_list)
     delta_speed = compute_speed_difference(Speed_list)
-    save_data_into_file(MMSI_list,Longitude_list,Latitude_list,Speed_list,Day_list,
-                        time_to_seconds_list,delta_time,delta_speed)
+    delta_heading = compute_heading_difference(Heading_list)
+    save_data_into_file(MMSI_list,Longitude_list,Latitude_list,Speed_list,Heading_list,Day_list,
+                        time_to_seconds_list,delta_time,delta_speed,delta_heading)
+
 
