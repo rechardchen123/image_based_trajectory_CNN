@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
-# _*_coding:utf-8 _*_
-# @Time    :Created on Dec 04 4:39 PM 2018
-# @Author  :xiang chen
-"""In this function, we three steps for generation trajectories that they contain the
-motion characters.
-First, generate the trajectory pictures.
-Second, determine the target areas.
-Third, determine the number and value of pixels of the image.
-And then, output the images and generate the arraies for classifying."""
-
+# -*- coding: utf-8 -*- 
+# @Time : 12/19/2018 7:54 PM 
+# @Author : Xiang Chen (Richard)
+# @File : trajectory_generation_local_new.py 
+# @Software: PyCharm
 # set the environments and import packages
 import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
-#matplotlib.use('Agg') #In local debugging, it should comment it and uploading to remote server,
-                      # should use this.
+# matplotlib.use('Agg') #In local debugging, it should comment it and uploading to remote server,
+                        # should use this.
 import pandas as pd
 import glob
 import math
@@ -23,9 +18,8 @@ import math
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-
-trajectory_file_address = glob.glob('/home/ucesxc0/Scratch/output/image_trajectory_generation/AIS_trajectory_split_per_day/*.csv')
-plt.rcParams['axes.facecolor'] = 'black' #define the backgroud
+trajectory_file_address = glob.glob(r"C:\Users\LPT-ucesxc0\AIS-Data\test_data\*.csv")
+plt.rcParams['axes.facecolor'] = 'black'  # define the backgroud
 
 for file in trajectory_file_address:
     file_load = pd.read_csv(file)
@@ -73,55 +67,21 @@ for file in trajectory_file_address:
     #label for the trajectory image
     if speed_deviation <2.0:
         name_label_static = 0
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%d.jpg' % (
-            name_mmsi, name_day,name_label_static))
+        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%d.jpg' % (
+        name_mmsi, name_day, name_label_static))
+        plt.show()
         plt.close('all')
     elif delta_heading_max <=delta_heading_threshold:
         name_label_normal_navigation = '0-1'
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%s.jpg' % (
-        name_mmsi, name_day, name_label_normal_navigation))
+        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg' % (
+            name_mmsi, name_day, name_label_normal_navigation))
+        plt.show()
         plt.close('all')
     else:
         name_label_maneuvring = '0-1-2'
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%s.jpg' % (
+        plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg' % (
             name_mmsi, name_day, name_label_maneuvring))
+        plt.show()
         plt.close('all')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

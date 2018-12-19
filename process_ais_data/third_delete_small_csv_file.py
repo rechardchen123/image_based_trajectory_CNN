@@ -1,7 +1,7 @@
 import os
 import operator
 
-directory = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_after_day_split'  # 需要修改的工作目录
+directory = r'C:\Users\LPT-ucesxc0\AIS-Data\result'  # 需要修改的工作目录
 os.chdir(directory)  # 改变当前工作目录
 cwd = os.getcwd()  # 查看当前工作目录
 print("--------------current working directory : " + cwd + "----------")

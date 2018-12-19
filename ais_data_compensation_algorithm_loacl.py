@@ -10,9 +10,13 @@ import pandas as pd
 import glob
 import math
 
+"""
+This function is used to compensate some missing points of a same MMSI vessel.
+Due to the uneven sampling, some points cannot be received and missed. In order to the 
+trajectory fully and smoothly, the compensation algorithm is used here. I just use the simple
+linear interpolation algorithm into this. 
+"""
 
-# pd.set_option('display.max_columns', None)
-# pd.set_option('display.max_rows', None)
 
 def linerar_interpolation_algorithm(lat0, lng0, lat1, lng1, lat):
     '''Algorithm for liner interpolation
@@ -116,7 +120,6 @@ def save_data_into_file(MMSI_list, Longitude_list, Latitude_list, Speed_list,
     data.to_csv(str(name_mmsi) + '-' + str(name_day) + '.csv', index=False)
 
 
-# load the data and calculate parameters(compensate_points, list)
 '''In this part, it is about to manuplate the dataset.
 Firstly, transfer the dataframe into different list (MMSI list, latitude list,
 Longitude list, speed list, time list etc.).
