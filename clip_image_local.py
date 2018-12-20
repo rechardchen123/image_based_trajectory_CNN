@@ -29,7 +29,7 @@ def CropImage4File(filepath,destpath):
 
 
 if __name__=='__main__':
-    filepath = r'C:\Users\LPT-ucesxc0\AIS-Data\ais_trajectory_include_motion_character'
-    destpath = r'C:\Users\LPT-ucesxc0\AIS-Data\image_after_clip'
+    filepath = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_image'
+    destpath = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_image_clip'
     CropImage4File(filepath,destpath)
 

@@ -73,17 +73,17 @@ for file in trajectory_file_address:
     #label for the trajectory image
     if speed_deviation <2.0:
         name_label_static = 0
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%d.jpg' % (
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result-static/%d-%d-%d.jpg' % (
             name_mmsi, name_day,name_label_static))
         plt.close('all')
     elif delta_heading_max <=delta_heading_threshold:
         name_label_normal_navigation = '0-1'
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%s.jpg' % (
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result-normal-navigation/%d-%d-%s.jpg' % (
         name_mmsi, name_day, name_label_normal_navigation))
         plt.close('all')
     else:
         name_label_maneuvring = '0-1-2'
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d-%s.jpg' % (
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result-maneuvring/%d-%d-%s.jpg' % (
             name_mmsi, name_day, name_label_maneuvring))
         plt.close('all')
 
