@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c2201c-6f6d-48ca-98aa-d95d3cf3bd82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_process_for_tensorflow/build_neural_network.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_process_for_tensorflow/test_training_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_process_for_tensorflow/training_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clip_image/clip_image.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clip_image_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/clip_image_local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_process_for_tensorflow/file" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data_process_for_tensorflow/image_data_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_process_for_tensorflow/image_data_preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +27,7 @@
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$split_abnormal_ais_per_day.coverage" NAME="split_abnormal_ais_per_day Coverage Results" MODIFIED="1545237426974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$test_plot.coverage" NAME="test_plot Coverage Results" MODIFIED="1544727932213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$transfet_image_to_grayscale.coverage" NAME="transfet_image_to_grayscale Coverage Results" MODIFIED="1544555098337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$image_data_preprocessing.coverage" NAME="image_data_preprocessing Coverage Results" MODIFIED="1545075240512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_process_for_tensorflow" />
+    <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$image_data_preprocessing.coverage" NAME="image_data_preprocessing Coverage Results" MODIFIED="1545402881943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_process_for_tensorflow" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$clip_image.coverage" NAME="clip_image Coverage Results" MODIFIED="1545079561484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/clip_image" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$test_interplot_alogorithm.coverage" NAME="test_interplot_alogorithm Coverage Results" MODIFIED="1544539052368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$test_file_size.coverage" NAME="test_file_size Coverage Results" MODIFIED="1544624657814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -41,20 +41,7 @@
     <SUITE FILE_PATH="coverage/image_based_trajectory_CNN$trajectory_generation_local_new.coverage" NAME="trajectory_generation_local_new Coverage Results" MODIFIED="1545252179971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data_process_for_tensorflow/image_data_preprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="889">
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-              <folding>
-                <element signature="e#171#180#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,7 +57,9 @@
     <setting file="file://$PROJECT_DIR$/trajectory_compenation_training_mpi/ais_data_compensation_algorithm_mpi.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/split-abnormal-trajectory-per-day/split_abnormal_trajectory_per_day.sh" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/ais_data_compensation_algorithm_loacl.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/data_process_for_tensorflow/test_training_model.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/trajectory_compensation_traing_series/ais_data_compensation_algorithm_series.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/data_process_for_tensorflow/training_model.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/process_ais_data/third_delete_small_csv_file.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/delta-time-delta-speed-split-per-day/delta-time-delta-speed-split-per-day.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/split-abnormal-trajectory-per-day/split_abnormal_ais_per_day.py" root0="SKIP_INSPECTION" />
@@ -81,6 +70,7 @@
     <setting file="file://$PROJECT_DIR$/process_ais_data/fourth_groupby_mmsi_day.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/trajectory_generation_local.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/clip_image_local.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/data_process_for_tensorflow/build_neural_network.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/process_ais_data/second_clean_and_group_the_data_by_mmsi.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" root0="SKIP_INSPECTION" />
   </component>
@@ -124,20 +114,24 @@
         <option value="$PROJECT_DIR$/clip_image_local.py" />
         <option value="$PROJECT_DIR$/trajectory_generation/trajectory_image_generation.py" />
         <option value="$PROJECT_DIR$/data_process_for_tensorflow/image_data_preprocessing.py" />
+        <option value="$PROJECT_DIR$/data_process_for_tensorflow/build_neural_network.py" />
+        <option value="$PROJECT_DIR$/data_process_for_tensorflow/training_model.py" />
+        <option value="$PROJECT_DIR$/data_process_for_tensorflow/test_training_model.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1945" />
-    <option name="y" value="492" />
-    <option name="width" value="1618" />
-    <option name="height" value="858" />
+    <option name="x" value="1823" />
+    <option name="y" value="382" />
+    <option name="width" value="1620" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,7 +153,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,7 +160,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../saving_loading_large_files_to_HDF5" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.clip_image_local">
+  <component name="RunManager" selected="Python.image_data_preprocessing">
     <configuration name="clip_image_local" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="image_based_trajectory_CNN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,6 +197,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="image_data_preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="image_based_trajectory_CNN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_process_for_tensorflow" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_process_for_tensorflow/image_data_preprocessing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="split_abnormal_ais_per_day" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="image_based_trajectory_CNN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,28 +233,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/split_abnormal_ais_per_day.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="image_based_trajectory_CNN" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -294,11 +287,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.image_data_preprocessing" />
         <item itemvalue="Python.clip_image_local" />
         <item itemvalue="Python.trajectory_generation_local_new" />
         <item itemvalue="Python.third_delete_small_csv_file" />
         <item itemvalue="Python.split_abnormal_ais_per_day" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -336,23 +329,24 @@
       <workItem from="1545231350384" duration="1901000" />
       <workItem from="1545234285920" duration="4785000" />
       <workItem from="1545239128461" duration="10193000" />
-      <workItem from="1545300948101" duration="11547000" />
+      <workItem from="1545300948101" duration="12300000" />
+      <workItem from="1545340139891" duration="218000" />
+      <workItem from="1545402202192" duration="9576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180021000" />
+    <option name="totallyTimeSpent" value="190568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="878" height="1510" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24572127" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17848411" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4987775" visible="true" weight="0.057329465" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4987775" weight="0.3374456" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31857765" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -382,9 +376,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_interplot_alogorithm.py" />
-    <entry file="file://$PROJECT_DIR$/ais_data_compensation.sh" />
-    <entry file="file://$PROJECT_DIR$/ais_data_compensation_mpi_script.sh" />
     <entry file="file://$PROJECT_DIR$/image_based_trajectory_CNN.py" />
     <entry file="file://$PROJECT_DIR$/training_mpi/ais_data_compensation_mpi_script.sh" />
     <entry file="file://$PROJECT_DIR$/test_file_size.py" />
@@ -405,13 +396,7 @@
     <entry file="file://$PROJECT_DIR$/data_process_for_tensorflow/file">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/clip_image/clip_image.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/clip_image/clip_image.sh" />
     <entry file="file://$PROJECT_DIR$/process_ais_data/trajectory generation.py" />
     <entry file="file://$PROJECT_DIR$/process_ais_data/read and process data.py" />
     <entry file="file://$PROJECT_DIR$/delta-time-delta-speed/delta-time-delta-speed.sh" />
@@ -566,10 +551,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_process_for_tensorflow/test_training_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1247">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#167#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_process_for_tensorflow/training_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_process_for_tensorflow/build_neural_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#167#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_process_for_tensorflow/image_data_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="889">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="2668">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
           <folding>
             <element signature="e#171#180#0" expanded="true" />
           </folding>
