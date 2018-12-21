@@ -15,16 +15,17 @@ This is a method for preprocessing the image data.
 1. generate sample and label.
 2. get the batch size.
 """
+train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type_after_clipping'
 
+static_state = []
+label_static_state = []  # label 0
+normal_navigation = []
+label_normal_navigation = []  # label 1
+maneuvring_operation = []
+label_maneuvring_operation = []  # label 2
 
 # Step 1. get the train_dir file address and save all data into the list
 def get_files(file_dir, ratio):
-    static_state = []
-    label_static_state = []  # label 0
-    normal_navigation = []
-    label_normal_navigation = []  # label 1
-    maneuvring_operation = []
-    label_maneuvring_operation = []  # label 2
     for file in os.listdir(file_dir + '/result-static'):
         static_state.append(file_dir + '/result-static' + file)
         label_static_state.append(0)
@@ -92,5 +93,5 @@ def get_batch(image, label, batch_size, capacity):
     return image_batch, label_batch
 
 
-train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type'
-train_image, train_label, val_image, val_labels = get_files(train_dir, ratio=0.3)
+
+

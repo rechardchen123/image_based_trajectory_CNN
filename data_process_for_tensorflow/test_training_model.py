@@ -42,7 +42,7 @@ def evaluate_one_image(image_array):
 
         x= tf.placeholder(tf.float32,shape=[360,490,3])
 
-        logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type'
+        logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type_after_clipping'
 
         saver = tf.train.Saver()
 
@@ -67,7 +67,7 @@ def evaluate_one_image(image_array):
 
 
 if __name__ == '__main__':
-    train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type'
+    train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type_after_clipping'
     train,train_label,val,val_label = get_files(train_dir,0.3)
     img = get_one_image(val)
     evaluate_one_image(img)

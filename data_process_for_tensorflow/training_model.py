@@ -18,8 +18,8 @@ MAX_STEP = 200
 learning_rate = 0.0001
 
 #get the batch
-train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type'
-logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type'
+train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type_after_clipping'
+logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type_after_clipping'
 
 train, train_label,val,val_label = image_data_preprocessing.get_files(train_dir,0.3)
 
