@@ -71,17 +71,27 @@ for file in trajectory_file_address:
         name_mmsi, name_day, name_label_static))
         plt.show()
         plt.close('all')
+        f = open(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/label.txt','a')
+        f.write(str(name_mmsi)+'-'+str(name_day)+'.jpg'+','+ '1' +','+ '-1'+','+'-1'+'\n')
+        f.close()
+
     elif delta_heading_max <=delta_heading_threshold:
         name_label_normal_navigation = '0-1'
         plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg' % (
             name_mmsi, name_day, name_label_normal_navigation))
         plt.show()
         plt.close('all')
+        f = open(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/label.txt', 'a')
+        f.write(str(name_mmsi)+'-'+str(name_day) + '.jpg' + ',' + '1' +','+ '1'+','+'-1'+'\n')
+        f.close()
     else:
         name_label_maneuvring = '0-1-2'
         plt.savefig(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/%d-%d-%s.jpg' % (
             name_mmsi, name_day, name_label_maneuvring))
         plt.show()
         plt.close('all')
+        f = open(r'C:\Users\LPT-ucesxc0\Documents\Github-repositories\image_based_trajectory_CNN/label.txt', 'a')
+        f.write(str(name_mmsi)+'-'+str(name_day) + '.jpg' + ',' + '1' +','+ '1'+','+'1'+'\n')
+        f.close()
 
 

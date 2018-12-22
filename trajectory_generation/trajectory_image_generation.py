@@ -72,20 +72,29 @@ for file in trajectory_file_address:
                          color='#666666', marker='.')  # maneuvring operation
     #label for the trajectory image
     if speed_deviation <2.0:
-        name_label_static = 0
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result-static/%d-%d-%d.jpg' % (
-            name_mmsi, name_day,name_label_static))
+        #name_label_static = 0
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d.jpg' % (
+            name_mmsi, name_day))
         plt.close('all')
+        f = open('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/label.txt', 'a')
+        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '-1' + ',' + '-1' + '\n')
+        f.close()
     elif delta_heading_max <=delta_heading_threshold:
-        name_label_normal_navigation = '0-1'
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result-normal-navigation/%d-%d-%s.jpg' % (
-        name_mmsi, name_day, name_label_normal_navigation))
+        #name_label_normal_navigation = '0-1'
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d.jpg' % (
+        name_mmsi, name_day))
         plt.close('all')
+        f = open('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/label.txt', 'a')
+        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '1' + ',' + '-1' + '\n')
+        f.close()
     else:
-        name_label_maneuvring = '0-1-2'
-        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result-maneuvring/%d-%d-%s.jpg' % (
-            name_mmsi, name_day, name_label_maneuvring))
+        #name_label_maneuvring = '0-1-2'
+        plt.savefig('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/%d-%d.jpg' % (
+            name_mmsi, name_day))
         plt.close('all')
+        f = open('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/label.txt', 'a')
+        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '1' + ',' + '1' + '\n')
+        f.close()
 
 
 

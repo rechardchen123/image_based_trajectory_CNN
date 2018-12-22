@@ -26,14 +26,14 @@ label_maneuvring_operation = []  # label 2
 
 # Step 1. get the train_dir file address and save all data into the list
 def get_files(file_dir, ratio):
-    for file in os.listdir(file_dir + '/result-static'):
-        static_state.append(file_dir + '/result-static' + file)
+    for file in os.listdir(file_dir + '/static'):
+        static_state.append(file_dir + '/static' + file)
         label_static_state.append(0)
-    for file in os.listdir(file_dir + '/result-normal-navigation'):
-        normal_navigation.append(file_dir + '/result-normal-navigation' + file)
+    for file in os.listdir(file_dir + '/normal-navigation'):
+        normal_navigation.append(file_dir + '/normal-navigation' + file)
         label_normal_navigation.append(1)
-    for file in os.listdir(file_dir + '/result-maneuvring'):
-        maneuvring_operation.append(file_dir + '/result-maneuvring' + file)
+    for file in os.listdir(file_dir + '/maneuvring'):
+        maneuvring_operation.append(file_dir + '/maneuvring' + file)
         label_maneuvring_operation.append(2)
 
     # step 2: hstack the label and image
