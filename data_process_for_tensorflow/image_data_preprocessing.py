@@ -1,31 +1,28 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
-# @Time : 12/16/2018 6:48 PM 
+# -*- coding: utf-8 -*-
+# @Time : 12/16/2018 6:48 PM
 # @Author : Xiang Chen (Richard)
-# @File : image_data_preprocessing.py 
+# @File : image_data_preprocessing.py
 # @Software: PyCharm
 import os
 import math
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
-
 """
 This is a method for preprocessing the image data.
 1. generate sample and label.
 2. get the batch size.
 """
-train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_classified_by_type_after_clipping'
-
-static_state = []
-label_static_state = []  # label 0
-normal_navigation = []
-label_normal_navigation = []  # label 1
-maneuvring_operation = []
-label_maneuvring_operation = []  # label 2
 
 # Step 1. get the train_dir file address and save all data into the list
 def get_files(file_dir, ratio):
+    static_state = []
+    label_static_state =[]
+    normal_navigation = []
+    label_normal_navigation = []
+    maneuvring_operation = []
+    label_maneuvring_operation = []
     for file in os.listdir(file_dir + '/static'):
         static_state.append(file_dir + '/static' + file)
         label_static_state.append(0)
@@ -37,8 +34,10 @@ def get_files(file_dir, ratio):
         label_maneuvring_operation.append(2)
 
     # step 2: hstack the label and image
-    image_list = np.hstack((static_state, normal_navigation, maneuvring_operation))
-    label_list = np.hstack((label_static_state, label_normal_navigation, label_maneuvring_operation))
+    image_list = np.hstack((static_state, normal_navigation,
+                            maneuvring_operation))
+    label_list = np.hstack((label_static_state, label_normal_navigation,
+                            label_maneuvring_operation))
 
     # using shuffle
     temp = np.array([image_list, label_list])
@@ -91,7 +90,3 @@ def get_batch(image, label, batch_size, capacity):
     label_batch = tf.reshape(label_batch, [batch_size])
     image_batch = tf.cast(image_batch, tf.float32)
     return image_batch, label_batch
-
-
-
-

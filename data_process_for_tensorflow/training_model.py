@@ -7,11 +7,11 @@
 import os
 import numpy as np
 import tensorflow as tf
-import image_data_preprocessing
-import build_neural_network
+from data_process_for_tensorflow import image_data_preprocessing
+from data_process_for_tensorflow import build_neural_network
 
 #define the variables
-N_CLASSES = 3 #normal_navigation, static, maneuvring
+N_CLASSES = 3 # static,normal_navigation,maneuvring
 BATCH_SIZE = 20
 CAPACITY = 200
 MAX_STEP = 200
@@ -31,13 +31,13 @@ val_batch, val_label_batch = image_data_preprocessing.get_batch(val,val_label,BA
 
 #training definiation
 train_logits = build_neural_network.inference(train_batch,BATCH_SIZE,N_CLASSES)
-train_loss = build_neural_network.losses(train_logits,train_label_batch)
+train_loss = build_neural_network.loss(train_logits,train_label_batch)
 train_op = build_neural_network.training(train_loss,learning_rate)
 train_acc = build_neural_network.evaluation(train_logits,train_label_batch)
 
 #testing definiation
 test_logits = build_neural_network.inference(val_batch,BATCH_SIZE,N_CLASSES)
-test_loss = build_neural_network.losses(test_logits,val_label_batch)
+test_loss = build_neural_network.loss(test_logits,val_label_batch)
 test_acc = build_neural_network.evaluation(test_logits,val_label_batch)
 
 #the summary of log
