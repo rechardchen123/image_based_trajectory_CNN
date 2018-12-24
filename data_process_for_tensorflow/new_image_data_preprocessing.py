@@ -81,7 +81,7 @@ def get_files(file_dir,label_dir,ratio):
         elif item[2] == '1' and item[3] == '-1':
             label_normal_navigation.append(int_to_one_hot(item))
             image_name_normal_navigation = item[0]
-            image_path_normal_navigation = os.path.join(file_dir, image_path_normal_navigation)
+            image_path_normal_navigation = os.path.join(file_dir, image_name_normal_navigation)
             if os.path.isfile(image_path_normal_navigation):
                 normal_navigation_image = Image.open(image_path_normal_navigation)
                 normal_navigation.append(normal_navigation_image)
