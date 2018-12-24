@@ -13,7 +13,6 @@ define the network:
 # return parameters: logits, float, [batch_size, n_classes]
 '''
 
-
 def inference(images, batch_size, n_classes):
     # convolutional layer 1
     # 3X3 convolutional kernal(total number 64), padding = 'SAME', it means the same size

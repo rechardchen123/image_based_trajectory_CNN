@@ -77,7 +77,7 @@ for file in trajectory_file_address:
             name_mmsi, name_day))
         plt.close('all')
         f = open('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/label.txt', 'a')
-        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '-1' + ',' + '-1' + '\n')
+        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '-1' + ',' + '-1' + '\r\n')
         f.close()
     elif delta_heading_max <=delta_heading_threshold:
         #name_label_normal_navigation = '0-1'
@@ -85,7 +85,7 @@ for file in trajectory_file_address:
         name_mmsi, name_day))
         plt.close('all')
         f = open('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/label.txt', 'a')
-        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '1' + ',' + '-1' + '\n')
+        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '1' + ',' + '-1' + '\r\n')
         f.close()
     else:
         #name_label_maneuvring = '0-1-2'
@@ -93,7 +93,7 @@ for file in trajectory_file_address:
             name_mmsi, name_day))
         plt.close('all')
         f = open('/home/ucesxc0/Scratch/output/image_trajectory_generation/result/label.txt', 'a')
-        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '1' + ',' + '1' + '\n')
+        f.write(str(name_mmsi) + '-' + str(name_day) + '.jpg' + ',' + '1' + ',' + '1' + ',' + '1' + '\r\n')
         f.close()
 
 

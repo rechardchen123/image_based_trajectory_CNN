@@ -3,7 +3,7 @@
 # @Time : 12/21/2018 3:58 PM
 # @Author : Xiang Chen (Richard)
 # @File : training_model.py
-# @Software: Pycharm
+# @Software: VS code
 import os
 import numpy as np
 import tensorflow as tf

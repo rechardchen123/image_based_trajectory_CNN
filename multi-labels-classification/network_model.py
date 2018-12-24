@@ -157,7 +157,7 @@ with tf.Session() as session:
                 x: image,
                 y1_: label1,
                 y2_: label2,
-                ye_: label3
+                y3_: label3
             })
             print("loss = ", train_loss)
             if count % 10 == 0:
