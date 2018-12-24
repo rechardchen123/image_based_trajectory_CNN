@@ -10,6 +10,7 @@ import os
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image
 
 
 def int_to_one_hot(labels):
