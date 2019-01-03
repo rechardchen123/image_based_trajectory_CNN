@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/ucesxc0/Scratch/output/training_image_classification/model.ckpt-5999"
+all_model_checkpoint_paths: "/home/ucesxc0/Scratch/output/training_image_classification/model.ckpt-5999"

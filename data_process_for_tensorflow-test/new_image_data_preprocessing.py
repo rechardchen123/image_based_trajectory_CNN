@@ -40,8 +40,7 @@ def int_to_one_hot(labels):
         label.append([0, 0, 1])
     return label
 
-
-#step 1. get the images and labels
+# get the all images and files
 def get_files(file_dir,label_dir,ratio):
     '''
     This function is used to read the images and labels.
@@ -77,6 +76,7 @@ def get_files(file_dir,label_dir,ratio):
             image_path_static = os.path.join(file_dir, image_name_static)
             if os.path.isfile(image_path_static):
                 static_image = Image.open(image_path_static)
+                static_image = static_image.tobytes()
                 static_state.append(static_image)
         elif item[2] == '1' and item[3] == '-1':
             label_normal_navigation.append(int_to_one_hot(item))
@@ -84,6 +84,7 @@ def get_files(file_dir,label_dir,ratio):
             image_path_normal_navigation = os.path.join(file_dir, image_name_normal_navigation)
             if os.path.isfile(image_path_normal_navigation):
                 normal_navigation_image = Image.open(image_path_normal_navigation)
+                normal_navigation_image = normal_navigation_image.tobytes()
                 normal_navigation.append(normal_navigation_image)
         elif item[3] == '1':
             label_maneuvring_operation.append(int_to_one_hot(item))
@@ -91,12 +92,14 @@ def get_files(file_dir,label_dir,ratio):
             image_path_maneuvring = os.path.join(file_dir, image_name_maneuvring)
             if os.path.isfile(image_path_maneuvring):
                 maneuvring_image = Image.open(image_path_maneuvring)
+                maneuvring_image = maneuvring_image.tobytes()
                 maneuvring_operation.append(maneuvring_image)
+    return static_state,label_static_state,normal_navigation, label_normal_navigation,maneuvring_operation,label_maneuvring_operation
 
-    # step 2: hstack the label and image
+def get_data(static_state,label_static_state,normal_navigation,label_normal_navigation,maneuvring_operation,label_maneuvring_operation,ratio):
+
     image_list = np.hstack((static_state,normal_navigation,maneuvring_operation))
     label_list = np.hstack((label_static_state,label_normal_navigation,label_maneuvring_operation))
-
     # using shuffle
     temp = np.array([image_list,label_list])
     temp = temp.transpose()

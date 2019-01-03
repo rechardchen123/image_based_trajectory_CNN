@@ -25,4 +25,3 @@ logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\test_image_process'
 #get the train and test data and labels
 train, train_label, test, test_label = new_image_data_preprocessing.get_files(train_dir,label_dir, 0.3)
 print(train,train_label,test,test_label)
-
