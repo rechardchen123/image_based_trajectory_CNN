@@ -6,7 +6,6 @@
 # @Software: PyCharm
 import tensorflow as tf
 import numpy as np
-import os
 
 
 def convolution_layer(image_tensor, batch_size, n_classes):
@@ -139,9 +138,10 @@ def evaluation(softmax_linear, label1_tensor, label2_tensor, label3_tensor,
         loss2 = tf.reduce_mean(cross_entropy2, name='loss2')
         loss3 = tf.reduce_mean(cross_entropy3, name='loss3')
         loss = (loss1 + loss2 + loss3) / 3
-        tf.summary.scalar('loss', loss)
+        tf.summary.scalar('total loss', loss)
 
         #optimization
+    with tf.name_scope('train_op'):
         train_op = tf.train.AdamOptimizer(
             learning_rate=learning_rate).minimize(loss)
 
@@ -155,30 +155,9 @@ def evaluation(softmax_linear, label1_tensor, label2_tensor, label3_tensor,
             correct_predict1 = tf.cast(correct_predict1, tf.float32)
             correct_predict2 = tf.cast(correct_predict2, tf.float32)
             correct_predict3 = tf.cast(correct_predict3, tf.float32)
-            accuracy1 = tf.reduce_mean(correct_predict1,name='accuracy1')
-            accuracy2 = tf.reduce_mean(correct_predict2,name='accuracy2')
-            accuracy3 = tf.reduce_mean(correct_predict3,name='accuracy3')
+            accuracy1 = tf.reduce_mean(correct_predict1, name='accuracy1')
+            accuracy2 = tf.reduce_mean(correct_predict2, name='accuracy2')
+            accuracy3 = tf.reduce_mean(correct_predict3, name='accuracy3')
             accuracy = (accuracy1 + accuracy2 + accuracy3) / 3
-            tf.summary.scalar('accuracy', accuracy)
+            tf.summary.scalar('total accuracy', accuracy)
     return loss, accuracy
-
-
-# def training(loss, learning_rate_tensor):
-#     with tf.name_scope('optimizer'):
-#         train_op = tf.train.AdamOptimizer(learning_rate=learning_rate_tensor).minimize(loss)
-#     return train_op
-#
-# def evaluation(label1_tensor, label2_tensor, label3_tensor, y1, y2, y3):
-#     with tf.variable_scope('accuracy') as scope:
-#         correct_predict1 = tf.equal(tf.argmax(label1_tensor), tf.argmax(y1))
-#         correct_predict2 = tf.equal(tf.argmax(label2_tensor), tf.argmax(y2))
-#         correct_predict3 = tf.equal(tf.argmax(label3_tensor), tf.argmax(y3))
-#         correct_predict1 = tf.cast(correct_predict1, tf.float32)
-#         correct_predict2 = tf.cast(correct_predict2, tf.float32)
-#         correct_predict3 = tf.cast(correct_predict3, tf.float32)
-#         accuracy1 = tf.reduce_mean(correct_predict1)
-#         accuracy2 = tf.reduce_mean(correct_predict2)
-#         accuracy3 = tf.reduce_mean(correct_predict3)
-#         accuracy = (accuracy1 + accuracy2 + accuracy3) / 3
-#         tf.summary.scalar('accuracy', accuracy)
-#     return accuracy
