@@ -59,10 +59,14 @@ with tf.name_scope('input_layer'):
     train_evaluation = build_network.evaluation(train_logit, label1_tensor,
                                                 label2_tensor, label3_tensor,
                                                 LEARNING_RATE)
+    # filenames = glob.glob(
+    #     r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset\train.tfrecords'
+    # )
     filenames = glob.glob(
-        r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset\train.tfrecords'
+        '/home/ucesxc0/Scratch/output/training_image_classification/train.tfrecords'
     )
-    logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset'
+    # logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset'
+    logs_train_dir = '/home/ucesxc0/Scratch/output/training_image_classification/'
     train_dataset = tf.data.TFRecordDataset(filenames)
     train_dataset = train_dataset.map(read_and_decode)
     # batch_size_tensor  = tf.convert_to_tensor(BATCH_SIZE,tf.int64)
