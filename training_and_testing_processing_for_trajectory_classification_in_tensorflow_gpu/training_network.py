@@ -73,7 +73,9 @@ with tf.name_scope('input_layer'):
     # train_dataset = train_dataset.batch(
     #     batch_size=BATCH_SIZE, drop_remainder=True)
     train_dataset = train_dataset.batch(
-        batch_size=BATCH_SIZE)
+        batch_size=BATCH_SIZE, drop_remainder=True)
+    # the tensorflow version is lower 1.8, use below 
+    # train_dataset = train_dataset.batch_and_drop_remainder(batch_size=BATCH_SIZE) 
     train_iter = train_dataset.make_one_shot_iterator()
     train_next_element = train_iter.get_next()
     init = tf.global_variables_initializer()
