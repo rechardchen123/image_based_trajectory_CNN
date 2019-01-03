@@ -23,7 +23,6 @@ def convolution_layer(image_tensor, batch_size, n_classes):
             image_tensor, weights, strides=[1, 1, 1, 1], padding='SAME')
         pre_activation = tf.nn.bias_add(conv, biases)
         conv1 = tf.nn.relu(pre_activation, name=scope.name)
-        shape2 = tf.shape(conv1)
     with tf.variable_scope('pooling1_lrn') as scope:
         pool1 = tf.nn.max_pool(
             conv1,
@@ -139,11 +138,13 @@ def evaluation(softmax_linear, label1_tensor, label2_tensor, label3_tensor,
         loss3 = tf.reduce_mean(cross_entropy3, name='loss3')
         loss = (loss1 + loss2 + loss3) / 3
         tf.summary.scalar('total loss', loss)
+        tf.summary.histogram('loss', loss)
 
         #optimization
     with tf.name_scope('train_op'):
         train_op = tf.train.AdamOptimizer(
-                learning_rate=learning_rate).minimize(loss)
+            learning_rate=learning_rate).minimize(loss)
+
         with tf.name_scope('accuracy'):
             correct_predict1 = tf.equal(
                 tf.argmax(label1_tensor), tf.argmax(y1))
@@ -159,4 +160,5 @@ def evaluation(softmax_linear, label1_tensor, label2_tensor, label3_tensor,
             accuracy3 = tf.reduce_mean(correct_predict3, name='accuracy3')
             accuracy = (accuracy1 + accuracy2 + accuracy3) / 3
             tf.summary.scalar('total accuracy', accuracy)
+            tf.summary.histogram('accuracy', accuracy)
     return loss, accuracy
