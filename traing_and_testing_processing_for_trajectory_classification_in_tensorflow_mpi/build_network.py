@@ -143,8 +143,7 @@ def evaluation(softmax_linear, label1_tensor, label2_tensor, label3_tensor,
         #optimization
     with tf.name_scope('train_op'):
         train_op = tf.train.AdamOptimizer(
-            learning_rate=learning_rate).minimize(loss)
-
+                learning_rate=learning_rate).minimize(loss)
         with tf.name_scope('accuracy'):
             correct_predict1 = tf.equal(
                 tf.argmax(label1_tensor), tf.argmax(y1))
