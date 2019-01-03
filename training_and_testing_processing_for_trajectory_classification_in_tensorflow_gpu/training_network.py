@@ -60,23 +60,23 @@ with tf.name_scope('input_layer'):
     train_evaluation = build_network.evaluation(train_logit, label1_tensor,
                                                 label2_tensor, label3_tensor,
                                                 LEARNING_RATE)
-    filenames = glob.glob(
-        r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset\train.tfrecords'
-    )
     # filenames = glob.glob(
-    #     '/home/ucesxc0/Scratch/output/training_image_classification/train.tfrecords'
+    #     r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset\train.tfrecords'
     # )
-    logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset'
-    # logs_train_dir = '/home/ucesxc0/Scratch/output/training_image_classification/'
+    filenames = glob.glob(
+        '/home/ucesxc0/Scratch/output/training_image_classification/train.tfrecords'
+    )
+    # logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset'
+    logs_train_dir = '/home/ucesxc0/Scratch/output/training_image_classification/'
     train_dataset = tf.data.TFRecordDataset(filenames)
     train_dataset = train_dataset.map(read_and_decode)
     # batch_size_tensor  = tf.convert_to_tensor(BATCH_SIZE,tf.int64)
     # train_dataset = train_dataset.batch(
     #     batch_size=BATCH_SIZE, drop_remainder=True)
-    train_dataset = train_dataset.batch(
-        batch_size=BATCH_SIZE, drop_remainder=True)
+    # train_dataset = train_dataset.batch(
+    #     batch_size=BATCH_SIZE, drop_remainder=True)
     # the tensorflow version is lower 1.8, use below
-    # train_dataset = train_dataset.batch_and_drop_remainder(batch_size=BATCH_SIZE)
+    train_dataset = train_dataset.apply(tf.contrib.data.batch_and_drop_remainder(batch_size=BATCH_SIZE))
     train_iter = train_dataset.make_one_shot_iterator()
     train_next_element = train_iter.get_next()
     # summary_op = tf.summary.merge([tf.get_collection(tf.GraphKeys.SUMMARIES,scope='input_layer'),

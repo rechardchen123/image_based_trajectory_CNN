@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c2201c-6f6d-48ca-98aa-d95d3cf3bd82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/training_and_testing_processing_for_trajectory_classification_in_tensorflow_gpu/build_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_and_testing_processing_for_trajectory_classification_in_tensorflow_gpu/build_network.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training_and_testing_processing_for_trajectory_classification_in_tensorflow_gpu/training_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_and_testing_processing_for_trajectory_classification_in_tensorflow_gpu/training_network.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/training_and_testing_processing_for_trajectory_classification_in_tensorflow_gpu/training_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="119" column="64" lean-forward="true" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+            <state relative-caret-position="3248">
+              <caret line="116" column="47" lean-forward="true" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -168,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1780" />
     <option name="y" value="280" />
     <option name="width" value="1200" />
@@ -398,23 +397,22 @@
       <workItem from="1546522008166" duration="59000" />
       <workItem from="1546522082860" duration="214000" />
       <workItem from="1546522330101" duration="72000" />
-      <workItem from="1546531420690" duration="4380000" />
+      <workItem from="1546531420690" duration="4712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363750000" />
+    <option name="totallyTimeSpent" value="364082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="878" height="1510" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.34596577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4979757" visible="true" weight="0.4992743" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" weight="0.4992743" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4811321" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -728,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/training_and_testing_processing_for_trajectory_classification_in_tensorflow_gpu/training_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="119" column="64" lean-forward="true" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+        <state relative-caret-position="3248">
+          <caret line="116" column="47" lean-forward="true" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
         </state>
       </provider>
     </entry>
