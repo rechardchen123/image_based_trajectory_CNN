@@ -13,7 +13,7 @@ import build_network
 N_CLASSES = 3
 MAX_STEP = 60000
 BATCH_SIZE = 32
-LEARNING_RATE = 0.0001
+LEARNING_RATE = 0.0005
 
 
 def read_and_decode(record):
@@ -108,7 +108,7 @@ with tf.name_scope('input_layer'):
                         label2_tensor: label2,
                         label3_tensor: label3
                     })
-                if count % 20 == 0:
+                if count % 10 == 0:
                     print('train loss=', np.around(tra_loss, 2))
                     print('train accuracy = ', tra_acc)
                     result = session.run(summary_op,feed_dict={image_tensor: image,
@@ -116,7 +116,7 @@ with tf.name_scope('input_layer'):
                         label2_tensor: label2,
                         label3_tensor: label3})
                     writer.add_summary(result,count)
-                if count % 50 == 0:
+                if count % 10 == 0:
                     checkpoint_path = os.path.join(logs_train_dir, 'model.ckpt')
                     saver.save(session, checkpoint_path, global_step=count)
                 count += 1

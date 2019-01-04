@@ -12,8 +12,8 @@ import build_network
 
 N_CLASSES = 3
 MAX_STEP = 60000
-BATCH_SIZE = 32
-LEARNING_RATE = 0.0001
+BATCH_SIZE = 16
+LEARNING_RATE = 0.00005
 
 
 def read_and_decode(record):
@@ -56,6 +56,7 @@ with tf.name_scope('input_layer'):
 
     train_logit = build_network.convolution_layer(image_tensor, BATCH_SIZE,
                                                   N_CLASSES)
+    tf.summary.histogram('train_logit',train_logit)
     train_evaluation = build_network.evaluation(train_logit, label1_tensor,
                                                 label2_tensor, label3_tensor,
                                                 LEARNING_RATE)
@@ -70,34 +71,54 @@ with tf.name_scope('input_layer'):
     train_dataset = tf.data.TFRecordDataset(filenames)
     train_dataset = train_dataset.map(read_and_decode)
     # batch_size_tensor  = tf.convert_to_tensor(BATCH_SIZE,tf.int64)
-    train_dataset = train_dataset.batch(
-        batch_size=BATCH_SIZE, drop_remainder=True)
+    # train_dataset = train_dataset.batch(
+    #     batch_size=BATCH_SIZE, drop_remainder=True)
+    # train_dataset = train_dataset.batch(
+    #     batch_size=BATCH_SIZE, drop_remainder=True)
+    # the tensorflow version is lower 1.8, use below
+    train_dataset = train_dataset.apply(tf.contrib.data.batch_and_drop_remainder(batch_size=BATCH_SIZE))
     train_iter = train_dataset.make_one_shot_iterator()
     train_next_element = train_iter.get_next()
-    init = tf.global_variables_initializer()
+    # summary_op = tf.summary.merge([tf.get_collection(tf.GraphKeys.SUMMARIES,scope='input_layer'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES,scope='conv1'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='pooling1_lrn'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='conv2'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='pooling2_lrn'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='conv3'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='local4'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='dropout'),
+    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES,scope='softmax_layer'),
+    #                                tf.get_collection(tf.GraphKeys.SUMMARIES, scope='loss'),
+    #                                tf.get_collection(tf.GraphKeys.SUMMARIES, scope='train_op'),
+    #                                tf.get_collection(tf.GraphKeys.SUMMARIES, scope='accuracy')])
+    summary_op = tf.summary.merge_all()
     writer = tf.summary.FileWriter(logs_train_dir, tf.get_default_graph())
-    # summary_op = tf.summary.merge_all()
     saver = tf.train.Saver()
+    init = tf.global_variables_initializer()
     with tf.Session() as session:
         session.run(init)
         count = 0
         try:
             while True:
                 image, label1, label2, label3 = session.run(train_next_element)
-                tra_loss, tra_acc = session.run(
-                    [train_logit, train_evaluation],
+                tra_loss, tra_acc = session.run(train_evaluation,
                     feed_dict={
                         image_tensor: image,
                         label1_tensor: label1,
                         label2_tensor: label2,
                         label3_tensor: label3
                     })
-                if count % 20 == 0:
+                if count % 2 == 0:
                     print('train loss=', np.around(tra_loss, 2))
-                    # print('train accuracy = ', np.multiply(tra_acc,100.0))
                     print('train accuracy = ', tra_acc)
-                checkpoint_path = os.path.join(logs_train_dir, 'model.ckpt')
-                saver.save(session, checkpoint_path, global_step=count)
+                    result = session.run(summary_op,feed_dict={image_tensor: image,
+                        label1_tensor: label1,
+                        label2_tensor: label2,
+                        label3_tensor: label3})
+                    writer.add_summary(result,count)
+                if count % 5 == 0:
+                    checkpoint_path = os.path.join(logs_train_dir, 'model.ckpt')
+                    saver.save(session, checkpoint_path, global_step=count)
                 count += 1
         except tf.errors.OutOfRangeError:
             print('end!')
