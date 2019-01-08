@@ -108,7 +108,7 @@ with tf.name_scope('input_layer'):
                         label2_tensor: label2,
                         label3_tensor: label3
                     })
-                if count % 10 == 0:
+                if count % 2 == 0:
                     print('train loss=', np.around(tra_loss, 2))
                     print('train accuracy = ', tra_acc)
                     result = session.run(summary_op,feed_dict={image_tensor: image,
