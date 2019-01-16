@@ -1,6 +1,6 @@
 {
     "files.autoSave": "onFocusChange",
-    "python.pythonPath": "C:\\Anaconda3\\python.exe",
+    "python.pythonPath": "C:\\Anaconda3\\envs\\venv1\\python.exe",
     "python.linting.flake8Enabled": false,
     "python.formatting.provider": "yapf",
     "python.linting.flake8Args": [
