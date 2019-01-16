@@ -56,7 +56,7 @@ with tf.name_scope('input_layer'):
 
     train_logit = build_network.convolution_layer(image_tensor, BATCH_SIZE,
                                                   N_CLASSES)
-    tf.summary.histogram('train_logit',train_logit)
+    tf.summary.histogram('train_logit', train_logit)
     train_evaluation = build_network.evaluation(train_logit, label1_tensor,
                                                 label2_tensor, label3_tensor,
                                                 LEARNING_RATE)
@@ -76,7 +76,8 @@ with tf.name_scope('input_layer'):
     # train_dataset = train_dataset.batch(
     #     batch_size=BATCH_SIZE, drop_remainder=True)
     # the tensorflow version is lower 1.8, use below
-    train_dataset = train_dataset.apply(tf.contrib.data.batch_and_drop_remainder(batch_size=BATCH_SIZE))
+    train_dataset = train_dataset.apply(
+        tf.contrib.data.batch_and_drop_remainder(batch_size=BATCH_SIZE))
     train_iter = train_dataset.make_one_shot_iterator()
     train_next_element = train_iter.get_next()
     summary_op = tf.summary.merge_all()
@@ -89,29 +90,30 @@ with tf.name_scope('input_layer'):
         try:
             while True:
                 image, label1, label2, label3 = session.run(train_next_element)
-                tra_loss,tra_loss1,tra_loss2,tra_loss3, tra_acc,tra_acc1,tra_acc2,tra_acc3 = \
+                tra_loss, tra_loss1, tra_loss2, tra_loss3, tra_acc, tra_acc1, tra_acc2, tra_acc3 = \
                     session.run(train_evaluation,
                                 feed_dict={
-                                image_tensor: image,
-                                label1_tensor: label1,
-                                label2_tensor: label2,
-                                label3_tensor: label3})
+                                    image_tensor: image,
+                                    label1_tensor: label1,
+                                    label2_tensor: label2,
+                                    label3_tensor: label3})
                 if count % 2 == 0:
                     print('train loss=', np.around(tra_loss, 2))
-                    print('train loss1=',np.around(tra_loss1,2))
-                    print('train loss2=',np.around(tra_loss2,2))
-                    print('train loss3=',np.around(tra_loss3,2))
+                    print('train loss1=', np.around(tra_loss1, 2))
+                    print('train loss2=', np.around(tra_loss2, 2))
+                    print('train loss3=', np.around(tra_loss3, 2))
                     print('train accuracy = ', tra_acc)
                     print('train accuracy1= ', tra_acc1)
                     print('train accuracy2= ', tra_acc2)
                     print('train accuracy3= ', tra_acc3)
-                    result = session.run(summary_op,feed_dict={image_tensor: image,
-                        label1_tensor: label1,
-                        label2_tensor: label2,
-                        label3_tensor: label3})
-                    writer.add_summary(result,count)
+                    result = session.run(summary_op, feed_dict={image_tensor: image,
+                                                                label1_tensor: label1,
+                                                                label2_tensor: label2,
+                                                                label3_tensor: label3})
+                    writer.add_summary(result, count)
                 if count % 10 == 0:
-                    checkpoint_path = os.path.join(logs_train_dir, 'model.ckpt')
+                    checkpoint_path = os.path.join(
+                        logs_train_dir, 'model.ckpt')
                     saver.save(session, checkpoint_path, global_step=count)
                 count += 1
         except tf.errors.OutOfRangeError:
