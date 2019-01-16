@@ -12,7 +12,7 @@ import build_network
 
 N_CLASSES = 3
 MAX_STEP = 60000
-BATCH_SIZE = 32
+BATCH_SIZE = 8
 LEARNING_RATE = 0.0005
 
 
@@ -60,14 +60,14 @@ with tf.name_scope('input_layer'):
     train_evaluation = build_network.evaluation(train_logit, label1_tensor,
                                                 label2_tensor, label3_tensor,
                                                 LEARNING_RATE)
-    # filenames = glob.glob(
-    #     r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset\train.tfrecords'
-    # )
     filenames = glob.glob(
-        '/home/ucesxc0/Scratch/output/training_image_classification/train.tfrecords'
+        r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset\train.tfrecords'
     )
-    # logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset'
-    logs_train_dir = '/home/ucesxc0/Scratch/output/training_image_classification/'
+    # filenames = glob.glob(
+    #     '/home/ucesxc0/Scratch/output/training_image_classification/train.tfrecords'
+    # )
+    logs_train_dir = r'C:\Users\LPT-ucesxc0\AIS-Data\AIS_trajectory_training_dataset'
+    # logs_train_dir = '/home/ucesxc0/Scratch/output/training_image_classification/'
     train_dataset = tf.data.TFRecordDataset(filenames)
     train_dataset = train_dataset.map(read_and_decode)
     # batch_size_tensor  = tf.convert_to_tensor(BATCH_SIZE,tf.int64)
@@ -79,18 +79,6 @@ with tf.name_scope('input_layer'):
     train_dataset = train_dataset.apply(tf.contrib.data.batch_and_drop_remainder(batch_size=BATCH_SIZE))
     train_iter = train_dataset.make_one_shot_iterator()
     train_next_element = train_iter.get_next()
-    # summary_op = tf.summary.merge([tf.get_collection(tf.GraphKeys.SUMMARIES,scope='input_layer'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES,scope='conv1'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='pooling1_lrn'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='conv2'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='pooling2_lrn'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='conv3'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='local4'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES, scope='dropout'),
-    #                                tf.get_collection(tf.GraphKeys.LOCAL_VARIABLES,scope='softmax_layer'),
-    #                                tf.get_collection(tf.GraphKeys.SUMMARIES, scope='loss'),
-    #                                tf.get_collection(tf.GraphKeys.SUMMARIES, scope='train_op'),
-    #                                tf.get_collection(tf.GraphKeys.SUMMARIES, scope='accuracy')])
     summary_op = tf.summary.merge_all()
     writer = tf.summary.FileWriter(logs_train_dir, tf.get_default_graph())
     saver = tf.train.Saver()
@@ -101,16 +89,22 @@ with tf.name_scope('input_layer'):
         try:
             while True:
                 image, label1, label2, label3 = session.run(train_next_element)
-                tra_loss, tra_acc = session.run(train_evaluation,
-                    feed_dict={
-                        image_tensor: image,
-                        label1_tensor: label1,
-                        label2_tensor: label2,
-                        label3_tensor: label3
-                    })
+                tra_loss,tra_loss1,tra_loss2,tra_loss3, tra_acc,tra_acc1,tra_acc2,tra_acc3 = \
+                    session.run(train_evaluation,
+                                feed_dict={
+                                image_tensor: image,
+                                label1_tensor: label1,
+                                label2_tensor: label2,
+                                label3_tensor: label3})
                 if count % 2 == 0:
                     print('train loss=', np.around(tra_loss, 2))
+                    print('train loss1=',np.around(tra_loss1,2))
+                    print('train loss2=',np.around(tra_loss2,2))
+                    print('train loss3=',np.around(tra_loss3,2))
                     print('train accuracy = ', tra_acc)
+                    print('train accuracy1= ', tra_acc1)
+                    print('train accuracy2= ', tra_acc2)
+                    print('train accuracy3= ', tra_acc3)
                     result = session.run(summary_op,feed_dict={image_tensor: image,
                         label1_tensor: label1,
                         label2_tensor: label2,
